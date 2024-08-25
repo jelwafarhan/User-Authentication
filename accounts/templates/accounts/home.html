@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+</head>
+<body>
+    <h1 style="color: rgb(211, 46, 46);">welcome homepage</h1>
+    {% if user.is_authenticated %}
+    <p>hello {{user.username}}</p>
+    <a href="{% url 'logout' %}">logout</a>
+    {% else %}
+       <p>you are not logged in</p>
+       <a href="{% url 'login' %}">login</a> <a href="{% url 'register' %}">register</a>
+    {% endif %}
+
+
+</body>
+</html>
